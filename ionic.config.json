@@ -1,0 +1,7 @@
+{
+  "name": "fw-react-input-change",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
