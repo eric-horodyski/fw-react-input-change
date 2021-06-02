@@ -1,13 +1,24 @@
-import './ExploreContainer.css';
+import { IonList, IonItem, IonInput } from "@ionic/react";
+import React, { useState } from "react";
+import "./ExploreContainer.css";
 
-interface ContainerProps { }
+const ExploreContainer: React.FC = () => {
+  const [value, setValue] = useState("");
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+  const handleInputChange = (value: string) => {
+    console.log("handleInputChange", value);
+    setValue(value);
+  };
+
   return (
-    <div className="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    </div>
+    <IonList>
+      <IonItem>
+        <IonInput
+          value={value}
+          onIonChange={(e) => handleInputChange(e.detail.value!)}
+        />
+      </IonItem>
+    </IonList>
   );
 };
 
