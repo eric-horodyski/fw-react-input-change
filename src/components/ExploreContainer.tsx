@@ -1,13 +1,13 @@
 import { IonList, IonItem, IonInput } from "@ionic/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ExploreContainer.css";
 
 const ExploreContainer: React.FC = () => {
   const [value, setValue] = useState("");
 
-  const handleInputChange = (value: string) => {
-    console.log("handleInputChange", value);
-    setValue(value);
+  const handleInputChange = (val: string) => {
+    console.log(`onIonChange with input: ${val}`);
+    setValue("hello");
   };
 
   return (
